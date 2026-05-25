@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Definitiva de Media Queries y Responsive Design</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Media Query en CSS</h1>
+        <p>Diseño responsive avanzado y estrategias de maquetación profesional</p>
+    </header>
+
+    <div class="contenedor">
+
+        <h2>¿Qué es un Media Query?</h2>
+        <p>
+            Un Media Query es una función de CSS que permite adaptar el diseño
+            de una página web según el tamaño de la pantalla, la resolución o la orientación del dispositivo.
+        </p>
+        <p>
+            Gracias a esta herramienta, las páginas pueden verse correctamente
+            en celulares, tablets y computadores desde un mismo código base.
+        </p>
+
+        <h2>Anatomía de una Media Query</h2>
+        <p>
+            Una Media Query se compone de un <b>tipo de medio</b> (opcional), una o más <b>expresiones de
+                características</b> (como el ancho), y los estilos CSS que se aplicarán si la condición es verdadera.
+        </p>
+
+        <div class="codigo">
+            <pre>
+                                                                                                                                            /* Estructura: @media [tipo de medio] and (característica) */
+                                                                                                                                            @media screen and (max-width: 768px) {
+                                                                                                                                            body {
+                                                                                                                                                background: lightblue;
+                                                                                                                                                    }
+                                                                                                                                                    }
+                                                                                                                                                    </pre>
+        </div>
+
+        <h3>Tipos de Medios (Media Types)</h3>
+        <ul>
+            <li><b>all:</b> Se usa para todos los dispositivos (valor por defecto).</li>
+            <li><b>screen:</b> Destinado a pantallas de computadores, tablets, celulares, etc.</li>
+            <li><b>print:</b> Destinado a material impreso y páginas vistas en pantalla en modo de vista previa de
+                impresión.</li>
+        </ul>
+
+        <h2>Operadores Lógicos</h2>
+        <p>Puedes crear reglas más específicas combinando condiciones con operadores lógicos:</p>
+        <ul>
+            <li><b>and:</b> Combina múltiples condiciones. Todas deben cumplirse. (Ej: Pantallas que sean de tipo
+                <i>screen</i> <u>y</u> tengan un ancho mínimo de 600px).</li>
+            <li><b>not:</b> Invierte el resultado de la Media Query.</li>
+            <li><b>, (coma):</b> Funciona como un operador <b>OR</b>. Aplica los estilos si al menos una de las
+                condiciones se cumple.</li>
+        </ul>
+
+        <div class="codigo">
+            <pre>
+                                                                                                                                                                                                                            /* Ejemplo con rango: Solo pantallas entre 600px y 1000px */
+                                                                                                                                                                                                                            @media screen and (min-width: 600px) and (max-width: 1000px) {
+                                                                                                                                                                                                                            .columna {
+                                                                                                                                                                                                                                width: 50%;
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    </pre>
+        </div>
+
+        <h2>Estrategias de Diseño: Mobile-First vs. Desktop-First</h2>
+        <p>
+            A la hora de maquetar existen dos filosofías principales. La industria actual prefiere mayoritariamente
+            <b>Mobile-First</b> debido al alto tráfico desde smartphones.
+        </p>
+
+        <table class="tabla-comparativa">
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Mobile-First (Recomendado)</th>
+                    <th>Desktop-First (Tradicional)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Punto de partida</b></td>
+                    <td>Diseño para pantallas pequeñas.</td>
+                    <td>Diseño para monitores grandes.</td>
+                </tr>
+                <tr>
+                    <td><b>Propiedad CSS</b></td>
+                    <td>Usa principalmente <code>min-width</code>.</td>
+                    <td>Usa principalmente <code>max-width</code>.</td>
+                </tr>
+                <tr>
+                    <td><b>Rendimiento móvil</b></td>
+                    <td>Excelente (carga menos código base).</td>
+                    <td>Más lento (descarga estilos pesados innecesarios).</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <h2>Breakpoints Estándar en la Industria</h2>
+        <p>Aunque los puntos de ruptura cambian según el diseño, estos son los estándares que utilizan frameworks como
+            Bootstrap:</p>
+        <ul>
+            <li><b>Dispositivos extra pequeños (Móviles):</b> Menor a 576px.</li>
+            <li><b>Dispositivos pequeños (Móviles grandes):</b> 576px o más.</li>
+            <li><b>Dispositivos medianos (Tablets):</b> 768px o más.</li>
+            <li><b>Dispositivos grandes (Laptops):</b> 992px o más.</li>
+            <li><b>Dispositivos extra grandes (Monitores):</b> 1200px o más.</li>
+        </ul>
+
+        <h2>Ventajas del Responsive Design</h2>
+        <ul>
+            <li><b>Mejora la experiencia del usuario (UX):</b> Evita el molesto zoom horizontal en pantallas móviles.
+            </li>
+            <li><b>Beneficios de SEO:</b> Google indexa y posiciona prioritariamente las páginas optimizadas para
+                móviles.</li>
+            <li><b>Código unificado:</b> Un solo archivo HTML y CSS sirve para cualquier pantalla existente.</li>
+        </ul>
+
+        <button onclick="mensaje()">
+            Mostrar mensaje
+        </button>
+
+    </div>
+
+    <footer>
+        Página creada con HTML, CSS y JavaScript - Manual de Estándares Web Profesionales
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
+
+
