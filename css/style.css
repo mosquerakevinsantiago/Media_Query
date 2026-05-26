@@ -2,10 +2,9 @@
     --color-fondo: #ffffff;
     --color-superficie: #ffffff;
     --color-primario: #000000;
-    --color-secundario: #0066cc;
-    --color-texto: #111111;
-    --color-borde: #eeeeee;
-    --color-codigo-bg: #f5f5f7;
+    --color-texto: #191919;
+    --color-borde: #e5e5e5;
+    --color-codigo-bg: #f8f9fa;
     --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -54,7 +53,7 @@ header h1 {
 }
 
 header p {
-    color: #555555;
+    color: #444444;
     font-size: 2.4rem;
     font-weight: 400;
     letter-spacing: -0.03em;
@@ -68,7 +67,7 @@ header p {
 }
 
 footer {
-    color: #888888;
+    color: #777777;
     text-align: left;
     padding: 5rem 0;
     max-width: 1200px;
@@ -133,13 +132,14 @@ b {
 
 .codigo {
     background-color: var(--color-codigo-bg);
+    border: 1px solid var(--color-borde);
     border-radius: 0;
     margin: 4rem 0;
     overflow-x: auto;
 }
 
 .codigo pre {
-    color: #000000;
+    color: var(--color-primario);
     font-family: ui-monospace, monospace;
     padding: 3rem;
     font-size: 1.6rem;
@@ -164,11 +164,12 @@ b {
 .tabla-comparativa th {
     color: var(--color-primario);
     font-weight: 800;
-    border-bottom: 3px solid var(--color-primario);
+    border-bottom: 2px solid var(--color-primario);
 }
 
 .tabla-comparativa td code {
     background-color: var(--color-codigo-bg);
+    border: 1px solid var(--color-borde);
     color: var(--color-primario);
     padding: 0.3rem 0.8rem;
     font-family: monospace;
@@ -185,13 +186,13 @@ button {
     font-weight: 600;
     border-radius: 0;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease;
     display: block;
     margin: 6rem 0 3rem 0;
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: #222222;
 }
 
 @media screen and (max-width: 1250px) {
@@ -265,4 +266,19 @@ button:hover {
     .tabla-comparativa td:nth-of-type(1):before { content: "Ítem:"; }
     .tabla-comparativa td:nth-of-type(2):before { content: "Mobile:"; }
     .tabla-comparativa td:nth-of-type(3):before { content: "Desktop:"; }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 2.4rem;
+    }
+
+    p, li {
+        font-size: 1.2rem;
+    }
+
+    .codigo pre {
+        font-size: 1.1rem;
+        padding: 1.25rem;
+    }
 }
