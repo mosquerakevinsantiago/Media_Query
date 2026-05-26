@@ -1,48 +1,239 @@
+/* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================== */
+:root {
+    --color-principal: #2c3e50;
+    --color-secundario: #3498db;
+    --color-fondo: #f8f9fa;
+    --color-tarjeta: #ffffff;
+    --color-texto: #333333;
+    --color-codigo: #272822;
+    --borde-radio: 8px;
+    --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. ESTRUCTURA Y CONTENEDORES
+   ========================================== */
+header {
+    background: linear-gradient(135deg, var(--color-principal), #1a252f);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.contenedor {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+footer {
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   3. COMPONENTES DE TEXTO Y BLOQUES
+   ========================================== */
+h2 {
+    color: var(--color-principal);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
 h3 {
-  color: #34495e;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+    color: var(--color-secundario);
+    margin: 1.5rem 0 0.5rem 0;
 }
 
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Bloques de Código */
+.codigo {
+    background-color: var(--color-codigo);
+    border-left: 5px solid var(--color-secundario);
+    border-radius: var(--borde-radio);
+    margin: 1.5rem 0;
+    overflow-x: auto; /* Permite scroll horizontal si el código es largo en móvil */
+}
+
+.codigo pre {
+    color: #f8f8f2;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1.2rem;
+    font-size: 0.95rem;
+}
+
+/* Botón Interactivo */
+button {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--borde-radio);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    display: block;
+    margin: 2.5rem auto 1rem auto;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   4. TABLAS RESPONSIVE
+   ========================================== */
 .tabla-comparativa {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: var(--color-tarjeta);
+    border-radius: var(--borde-radio);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.tabla-comparativa th,
+.tabla-comparativa th, 
 .tabla-comparativa td {
-  border: 1px solid #bdc3c7;
-  padding: 0.75rem;
-  text-align: left;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
 }
 
 .tabla-comparativa th {
-  background-color: #34495e;
-  color: white;
+    background-color: var(--color-principal);
+    color: white;
+    font-weight: 600;
 }
 
-.tabla-comparativa tr:nth-child(even) {
-  background-color: #f9f9f9;
+.tabla-comparativa tr:hover {
+    background-color: #fcfcfc;
 }
 
-@media (max-width: 600px) {
-  .tabla-comparativa {
-    font-size: 0.8rem;
-  }
+/* ==========================================
+   5. ESTRATEGIA RESPONSIVE (MEDIA QUERIES)
+   ========================================== */
 
-  .tabla-comparativa th,
-  .tabla-comparativa td {
-    padding: 0.5rem;
-  }
+/* Tabletas hacia abajo (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .contenedor {
+        margin: 1rem auto;
+    }
+
+    /* Transformamos la tabla en bloques para que no se desborde en pantallas chicas */
+    .tabla-comparativa, 
+    .tabla-comparativa thead, 
+    .tabla-comparativa tbody, 
+    .tabla-comparativa th, 
+    .tabla-comparativa td, 
+    .tabla-comparativa tr { 
+        display: block; 
+    }
+    
+    .tabla-comparativa thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .tabla-comparativa tr {
+        border: 1px solid #ccc; 
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+    }
+    
+    .tabla-comparativa td { 
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    .tabla-comparativa td:before { 
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: bold;
+        color: var(--color-principal);
+    }
+    
+    /* Agregamos etiquetas simuladas para la tabla colapsada */
+    .tabla-comparativa td:nth-of-type(1):before { content: "Propiedad:"; }
+    .tabla-comparativa td:nth-of-type(2):before { content: "Mobile-First:"; }
+    .tabla-comparativa td:nth-of-type(3):before { content: "Desktop-First:"; }
 }
 
-code {
-  background: #e8e8e8;
-  padding: 0.2rem 0.4rem;
-  border-radius: 3px;
-  font-family: monospace;
-  color: #c0392b;
-}
+/* Teléfonos móviles (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
 
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .codigo pre {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+}
