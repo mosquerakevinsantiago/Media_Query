@@ -1,14 +1,13 @@
 :root {
-    --color-primario: #000000;
-    --color-texto: #111111;
-    --color-codigo-bg: rgba(255, 255, 255, 0.5);
+    --color-fondo: #f4f6f9;
+    --color-superficie: #ffffff;
+    --color-primario: #0f172a;
+    --color-secundario: #0284c7;
+    --color-texto: #1e293b;
+    --color-borde: #cbd5e1;
+    --color-codigo-bg: #f8fafc;
     --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-@keyframes flujoFluido {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    --borde-radio: 12px;
 }
 
 * {
@@ -19,222 +18,208 @@
 
 body {
     font-family: var(--fuente-sistema);
+    background-color: var(--color-fondo);
     color: var(--color-texto);
-    line-height: 1.6;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: flujoFluido 15s ease infinite;
-    background-attachment: fixed;
 }
 
 header {
-    background: transparent;
-    text-align: left;
-    padding: 10rem 0 4rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: var(--color-superficie);
+    border-bottom: 2px solid var(--color-borde);
+    text-align: center;
+    padding: 7rem 2rem;
     position: relative;
 }
 
 header::before {
     content: "kevin santiago mosquera";
     position: absolute;
-    top: 3rem;
-    left: 0;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--color-primario);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    top: 20px;
+    right: 25px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-secundario);
+    letter-spacing: 1px;
 }
 
 header h1 {
     color: var(--color-primario);
-    font-size: 6rem;
-    font-weight: 900;
-    letter-spacing: -0.05em;
-    margin-bottom: 2rem;
-    line-height: 1.05;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
 }
 
 header p {
-    color: #222222;
-    font-size: 2.4rem;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.4;
+    color: #475569;
+    font-size: 1.8rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 0 10rem 0;
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 0 2.5rem;
 }
 
 footer {
-    color: #222222;
-    text-align: left;
-    padding: 5rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 1.4rem;
-    font-weight: 600;
-    border-top: 2px solid rgba(0,0,0,0.1);
+    background-color: var(--color-superficie);
+    color: #64748b;
+    text-align: center;
+    padding: 3.5rem 2rem;
+    margin-top: 8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-top: 2px solid var(--color-borde);
 }
 
 h2 {
     color: var(--color-primario);
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    margin-top: 8rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 5rem;
+    margin-bottom: 1.8rem;
 }
 
 h3 {
     color: var(--color-primario);
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin: 5rem 0 2rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 3.5rem 0 1.2rem 0;
 }
 
 p {
-    font-size: 1.9rem;
-    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.2rem;
     color: var(--color-texto);
-    font-weight: 500;
-    letter-spacing: -0.01em;
 }
 
 ul {
-    margin-bottom: 4rem;
-    padding-left: 0;
-    list-style: none;
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
 }
 
 li {
-    font-size: 1.8rem;
-    margin-bottom: 1.8rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
     color: var(--color-texto);
-    font-weight: 500;
-    position: relative;
-    padding-left: 2rem;
-}
-
-li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--color-primario);
-    font-weight: 700;
 }
 
 b {
     color: var(--color-primario);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .codigo {
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 4rem 0;
+    background-color: var(--color-codigo-bg);
+    border: 2px solid var(--color-borde);
+    border-radius: var(--borde-radio);
+    margin: 3rem 0;
     overflow-x: auto;
 }
 
 .codigo pre {
-    color: var(--color-primario);
-    font-family: ui-monospace, monospace;
-    padding: 3rem;
-    font-size: 1.6rem;
+    color: #1e293b;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    padding: 2rem;
+    font-size: 1.3rem;
     font-weight: 600;
+    tab-size: 4;
 }
 
 .tabla-comparativa {
     width: 100%;
-    border-collapse: collapse;
-    margin: 5rem 0;
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 3.5rem 0;
+    background-color: var(--color-superficie);
+    border: 2px solid var(--color-borde);
+    border-radius: var(--borde-radio);
+    overflow: hidden;
 }
 
 .tabla-comparativa th, 
 .tabla-comparativa td {
-    padding: 2.5rem 1rem;
+    padding: 1.7rem 2rem;
     text-align: left;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    font-size: 1.8rem;
-    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-borde);
+    font-size: 1.4rem;
+}
+
+.tabla-comparativa tr:last-child td {
+    border-bottom: none;
 }
 
 .tabla-comparativa th {
-    font-weight: 800;
-    border-bottom: 3px solid var(--color-primario);
+    background-color: #f8fafc;
+    color: var(--color-primario);
+    font-weight: 700;
 }
 
 .tabla-comparativa td code {
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 0.3rem 0.8rem;
+    background-color: #e2e8f0;
+    color: #0f172a;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
     font-family: monospace;
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.tabla-comparativa tr:hover {
+    background-color: #f1f5f9;
 }
 
 button {
     background-color: var(--color-primario);
     color: white;
     border: none;
-    padding: 1.8rem 5rem;
-    font-size: 1.8rem;
+    padding: 1.3rem 3.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    border-radius: 0;
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
     display: block;
-    margin: 6rem 0 3rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin: 5rem auto 2.5rem auto;
 }
 
 button:hover {
-    background-color: #222222;
-    transform: translateY(-2px);
+    background-color: #1e293b;
 }
 
-@media screen and (max-width: 1250px) {
-    header, .contenedor, footer {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+button:active {
+    transform: scale(0.98);
 }
 
 @media screen and (max-width: 768px) {
     header {
-        padding-top: 8rem;
+        padding: 5rem 1.5rem;
     }
 
     header h1 {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
     }
 
     header p {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+    }
+    
+    .contenedor {
+        margin: 2.5rem auto;
+        padding: 0 1.5rem;
     }
 
     h2 {
-        font-size: 2.5rem;
-    }
-
-    h3 {
         font-size: 2rem;
-    }
-
-    p, li {
-        font-size: 1.5rem;
+        margin-top: 3.5rem;
     }
 
     .tabla-comparativa, 
@@ -253,42 +238,47 @@ button:hover {
     }
     
     .tabla-comparativa tr {
-        border-bottom: 2px solid var(--color-primario); 
-        padding: 2rem 0;
+        border-bottom: 2px solid var(--color-borde); 
+        padding: 1.2rem 0;
+    }
+    
+    .tabla-comparativa tr:last-child {
+        border-bottom: none;
     }
     
     .tabla-comparativa td { 
         border: none;
-        padding: 0.8rem 0 0.8rem 45%; 
+        padding: 0.6rem 1.2rem 0.6rem 45%; 
         position: relative;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     
     .tabla-comparativa td:before { 
         position: absolute;
-        top: 0.8rem;
-        left: 0;
+        top: 0.6rem;
+        left: 1.2rem;
         width: 40%; 
-        font-weight: 800;
+        font-weight: 700;
         color: var(--color-primario);
+        font-size: 1.1rem;
     }
     
-    .tabla-comparativa td:nth-of-type(1):before { content: "Ítem:"; }
-    .tabla-comparativa td:nth-of-type(2):before { content: "Mobile:"; }
-    .tabla-comparativa td:nth-of-type(3):before { content: "Desktop:"; }
+    .tabla-comparativa td:nth-of-type(1):before { content: "Característica:"; }
+    .tabla-comparativa td:nth-of-type(2):before { content: "Mobile-First:"; }
+    .tabla-comparativa td:nth-of-type(3):before { content: "Desktop-First:"; }
 }
 
 @media screen and (max-width: 480px) {
     header h1 {
-        font-size: 2.4rem;
+        font-size: 2.1rem;
     }
 
     p, li {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .codigo pre {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 1.25rem;
     }
 }
