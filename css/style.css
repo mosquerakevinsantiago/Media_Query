@@ -1,15 +1,13 @@
-
 :root {
-    --bg-principal: #0a0b10;
-    --bg-tarjeta: #121420;
-    --bg-codigo: #05060b;
-    --neon-cian: #00f3ff;
-    --neon-magenta: #ff0055;
-    --neon-verde: #39ff14;
-    --texto-brillante: #f0f5ff;
-    --texto-mutado: #6272a4;
-    --fuente-titulo: 'Orbitron', 'Segoe UI', sans-serif;
-    --fuente-mono: 'Fira Code', 'Courier New', monospace;
+    --color-fondo: #fcfcfd;
+    --color-superficie: #ffffff;
+    --color-primario: #1e293b;
+    --color-secundario: #0284c7;
+    --color-texto: #475569;
+    --color-borde: #e2e8f0;
+    --color-codigo-bg: #f8fafc;
+    --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --borde-radio: 12px;
 }
 
 * {
@@ -19,212 +17,177 @@
 }
 
 body {
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-    background-color: var(--bg-principal);
-    color: var(--texto-brillante);
+    font-family: var(--fuente-sistema);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
     line-height: 1.7;
-    background-image: 
-        radial-gradient(circle at 20% 30%, rgba(0, 243, 255, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(255, 0, 85, 0.04) 0%, transparent 40%);
+    -webkit-font-smoothing: antialiased;
 }
 
 header {
-    background-color: rgba(18, 20, 32, 0.8);
-    border-bottom: 3px solid var(--neon-cian);
+    background-color: var(--color-superficie);
+    border-bottom: 1px solid var(--color-borde);
     text-align: center;
-    padding: 4.5rem 1rem;
+    padding: 5rem 1.5rem;
     position: relative;
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
 }
 
 header::before {
     content: "kevin santiago mosquera";
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 20px;
-    font-family: var(--fuente-mono);
-    font-size: 0.75rem;
-    color: var(--neon-verde);
-    letter-spacing: 2px;
-}
-
-header h1 {
-    font-family: var(--fuente-titulo);
-    font-size: 3.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
-    margin-bottom: 1rem;
-}
-
-header p {
-    font-family: var(--fuente-mono);
-    font-size: 1.1rem;
-    color: var(--neon-magenta);
-    text-shadow: 0 0 8px rgba(255, 0, 85, 0.4);
-    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--color-secundario);
     letter-spacing: 1px;
 }
 
+header h1 {
+    color: var(--color-primario);
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.75rem;
+}
+
+header p {
+    color: #64748b;
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .contenedor {
-    max-width: 1050px; 
+    max-width: 1050px;
     margin: 4rem auto;
     padding: 0 2rem;
 }
 
 footer {
-    background-color: var(--bg-tarjeta);
-    color: var(--texto-mutado);
+    background-color: var(--color-superficie);
+    color: #94a3b8;
     text-align: center;
-    padding: 2rem;
-    margin-top: 5rem;
-    font-family: var(--fuente-mono);
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(0, 243, 255, 0.1);
-    letter-spacing: 1px;
+    padding: 2.5rem 1.5rem;
+    margin-top: 6rem;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--color-borde);
 }
 
 h2 {
-    font-family: var(--fuente-titulo);
-    color: var(--neon-cian);
+    color: var(--color-primario);
     font-size: 2rem;
-    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-}
-
-h2::before {
-    content: "> ";
-    color: var(--neon-magenta);
-    margin-right: 10px;
-    font-family: var(--fuente-mono);
 }
 
 h3 {
-    font-family: var(--fuente-titulo);
-    color: var(--neon-magenta);
+    color: var(--color-primario);
     font-size: 1.4rem;
-    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     margin: 2.5rem 0 1rem 0;
-    letter-spacing: 1px;
 }
 
 p {
-    font-size: 1.15rem; 
+    font-size: 1.15rem;
     margin-bottom: 1.5rem;
-    color: #cbd5e1;
+    color: var(--color-texto);
 }
 
 ul {
     margin-bottom: 2rem;
-    padding-left: 1.5rem;
-    list-style: none; 
+    padding-left: 1.25rem;
 }
 
 li {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-li::before {
-    content: "■";
-    position: absolute;
-    left: 0;
-    color: var(--neon-cian);
-    font-size: 0.8rem;
-    top: 2px;
-    text-shadow: 0 0 5px var(--neon-cian);
+    color: var(--color-texto);
 }
 
 b {
-    color: #fff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    color: var(--color-primario);
+    font-weight: 600;
 }
 
 .codigo {
-    background-color: var(--bg-codigo);
-    border: 1px solid rgba(0, 243, 255, 0.2);
-    border-left: 4px solid var(--neon-magenta);
-    border-radius: 4px;
+    background-color: var(--color-codigo-bg);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--borde-radio);
     margin: 2rem 0;
     overflow-x: auto;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .codigo pre {
-    color: #a6e22e; 
-    font-family: var(--fuente-mono);
+    color: #334155;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     padding: 1.5rem;
     font-size: 1.05rem;
+    tab-size: 4;
 }
 
 .tabla-comparativa {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 2.5rem 0;
-    background-color: var(--bg-tarjeta);
-    border: 1px solid rgba(0, 243, 255, 0.15);
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--borde-radio);
+    overflow: hidden;
 }
 
 .tabla-comparativa th, 
 .tabla-comparativa td {
-    padding: 1.2rem;
+    padding: 1.25rem 1.5rem;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--color-borde);
     font-size: 1.1rem;
 }
 
+.tabla-comparativa tr:last-child td {
+    border-bottom: none;
+}
+
 .tabla-comparativa th {
-    font-family: var(--fuente-titulo);
-    background-color: rgba(0, 243, 255, 0.05);
-    color: var(--neon-cian);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid var(--neon-cian);
+    background-color: #f8fafc;
+    color: var(--color-primario);
+    font-weight: 600;
 }
 
 .tabla-comparativa td code {
-    background-color: rgba(255, 0, 85, 0.1);
-    color: var(--neon-magenta);
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-family: var(--fuente-mono);
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.95rem;
 }
 
 .tabla-comparativa tr:hover {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: #f8fafc;
 }
 
 button {
-    background-color: transparent;
-    color: var(--neon-verde);
-    border: 2px solid var(--neon-verde);
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
     padding: 1rem 2.5rem;
-    font-family: var(--fuente-titulo);
     font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    font-weight: 500;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
     display: block;
     margin: 4rem auto 2rem auto;
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.1);
-    position: relative;
 }
 
 button:hover {
-    background-color: var(--neon-verde);
-    color: var(--bg-principal);
-    box-shadow: 0 0 25px var(--neon-verde);
-    transform: scale(1.05);
+    background-color: #0f172a;
 }
 
 button:active {
@@ -232,19 +195,28 @@ button:active {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        padding: 4rem 1rem;
+    }
+
     header h1 {
         font-size: 2.3rem;
-        letter-spacing: 2px;
+    }
+
+    header p {
+        font-size: 1.1rem;
     }
     
     .contenedor {
         margin: 2rem auto;
-        padding: 0 1.2rem;
+        padding: 0 1.25rem;
     }
 
     h2 {
         font-size: 1.6rem;
+        margin-top: 3rem;
     }
+
     .tabla-comparativa, 
     .tabla-comparativa thead, 
     .tabla-comparativa tbody, 
@@ -261,46 +233,47 @@ button:active {
     }
     
     .tabla-comparativa tr {
-        border: 1px solid rgba(0, 243, 255, 0.2); 
-        margin-bottom: 1.5rem;
-        background-color: var(--bg-tarjeta);
+        border-bottom: 2px solid var(--color-borde); 
+        padding: 1rem 0;
+    }
+    
+    .tabla-comparativa tr:last-child {
+        border-bottom: none;
     }
     
     .tabla-comparativa td { 
         border: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+        padding: 0.5rem 1rem 0.5rem 45%; 
         position: relative;
-        padding-left: 45%; 
         font-size: 1rem;
     }
     
     .tabla-comparativa td:before { 
         position: absolute;
-        top: 1.2rem;
+        top: 0.5rem;
         left: 1rem;
         width: 40%; 
-        font-weight: bold;
-        color: var(--neon-cian);
-        font-family: var(--fuente-titulo);
-        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-primario);
+        font-size: 0.9rem;
     }
     
-    .tabla-comparativa td:nth-of-type(1):before { content: "DATA_TYPE:"; }
-    .tabla-comparativa td:nth-of-type(2):before { content: "M_FIRST:"; }
-    .tabla-comparativa td:nth-of-type(3):before { content: "D_FIRST:"; }
+    .tabla-comparativa td:nth-of-type(1):before { content: "Característica:"; }
+    .tabla-comparativa td:nth-of-type(2):before { content: "Mobile-First:"; }
+    .tabla-comparativa td:nth-of-type(3):before { content: "Desktop-First:"; }
 }
 
 @media screen and (max-width: 480px) {
     header h1 {
         font-size: 1.8rem;
     }
-    
+
     p, li {
         font-size: 1.05rem;
     }
 
     .codigo pre {
         font-size: 0.9rem;
-        padding: 1rem;
+        padding: 1.25rem;
     }
 }
