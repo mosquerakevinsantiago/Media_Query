@@ -1,13 +1,12 @@
 :root {
-    --color-fondo: #f8fafc;
+    --color-fondo: #ffffff;
     --color-superficie: #ffffff;
-    --color-primario: #0f172a;
-    --color-secundario: #0284c7;
-    --color-texto: #1e293b;
-    --color-borde: #cbd5e1;
-    --color-codigo-bg: #f1f5f9;
-    --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --borde-radio: 16px;
+    --color-primario: #000000;
+    --color-secundario: #0066cc;
+    --color-texto: #111111;
+    --color-borde: #eeeeee;
+    --color-codigo-bg: #f5f5f7;
+    --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * {
@@ -20,98 +19,111 @@ body {
     font-family: var(--fuente-sistema);
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    line-height: 1.8;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
 header {
     background-color: var(--color-superficie);
-    border-bottom: 2px solid var(--color-borde);
-    text-align: center;
-    padding: 8rem 2rem;
+    text-align: left;
+    padding: 10rem 0 4rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
 }
 
 header::before {
     content: "kevin santiago mosquera";
     position: absolute;
-    top: 25px;
-    right: 35px;
-    font-family: monospace;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--color-secundario);
-    letter-spacing: 1px;
+    top: 3rem;
+    left: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 header h1 {
     color: var(--color-primario);
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 900;
-    letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
+    letter-spacing: -0.05em;
+    margin-bottom: 2rem;
+    line-height: 1.05;
 }
 
 header p {
-    color: #475569;
-    font-size: 2rem;
-    font-weight: 500;
-    max-width: 900px;
-    margin: 0 auto;
+    color: #555555;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.4;
 }
 
 .contenedor {
     max-width: 1200px;
-    margin: 6rem auto;
-    padding: 0 3rem;
+    margin: 0 auto;
+    padding: 0 0 10rem 0;
 }
 
 footer {
-    background-color: var(--color-superficie);
-    color: #64748b;
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-top: 10rem;
-    font-size: 1.3rem;
+    color: #888888;
+    text-align: left;
+    padding: 5rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1.4rem;
     font-weight: 500;
-    border-top: 2px solid var(--color-borde);
+    border-top: 1px solid var(--color-borde);
 }
 
 h2 {
     color: var(--color-primario);
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-top: 6rem;
-    margin-bottom: 2rem;
+    letter-spacing: -0.04em;
+    margin-top: 8rem;
+    margin-bottom: 2.5rem;
 }
 
 h3 {
     color: var(--color-primario);
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: -0.01em;
-    margin: 4rem 0 1.5rem 0;
+    letter-spacing: -0.03em;
+    margin: 5rem 0 2rem 0;
 }
 
 p {
-    font-size: 1.6rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.9rem;
+    margin-bottom: 3rem;
     color: var(--color-texto);
-    font-weight: 450;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 ul {
-    margin-bottom: 3.5rem;
-    padding-left: 2rem;
+    margin-bottom: 4rem;
+    padding-left: 0;
+    list-style: none;
 }
 
 li {
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.8rem;
     color: var(--color-texto);
-    font-weight: 450;
+    font-weight: 400;
+    position: relative;
+    padding-left: 2rem;
+}
+
+li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-primario);
+    font-weight: 700;
 }
 
 b {
@@ -121,107 +133,97 @@ b {
 
 .codigo {
     background-color: var(--color-codigo-bg);
-    border: 2px solid var(--color-borde);
-    border-radius: var(--borde-radio);
-    margin: 3.5rem 0;
+    border-radius: 0;
+    margin: 4rem 0;
     overflow-x: auto;
 }
 
 .codigo pre {
-    color: #0f172a;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    padding: 2.5rem;
-    font-size: 1.4rem;
+    color: #000000;
+    font-family: ui-monospace, monospace;
+    padding: 3rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    tab-size: 4;
 }
 
 .tabla-comparativa {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: 4rem 0;
+    border-collapse: collapse;
+    margin: 5rem 0;
     background-color: var(--color-superficie);
-    border: 2px solid var(--color-borde);
-    border-radius: var(--borde-radio);
-    overflow: hidden;
 }
 
 .tabla-comparativa th, 
 .tabla-comparativa td {
-    padding: 2rem 2.5rem;
+    padding: 2.5rem 1rem;
     text-align: left;
-    border-bottom: 2px solid var(--color-borde);
-    font-size: 1.5rem;
-}
-
-.tabla-comparativa tr:last-child td {
-    border-bottom: none;
+    border-bottom: 1px solid var(--color-borde);
+    font-size: 1.8rem;
 }
 
 .tabla-comparativa th {
-    background-color: #f8fafc;
     color: var(--color-primario);
-    font-weight: 700;
+    font-weight: 800;
+    border-bottom: 3px solid var(--color-primario);
 }
 
 .tabla-comparativa td code {
-    background-color: #e2e8f0;
-    color: #0f172a;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
+    background-color: var(--color-codigo-bg);
+    color: var(--color-primario);
+    padding: 0.3rem 0.8rem;
     font-family: monospace;
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-.tabla-comparativa tr:hover {
-    background-color: #f1f5f9;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 button {
     background-color: var(--color-primario);
     color: white;
     border: none;
-    padding: 1.5rem 4rem;
-    font-size: 1.6rem;
+    padding: 1.8rem 5rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    border-radius: 12px;
+    border-radius: 0;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: opacity 0.2s ease;
     display: block;
-    margin: 6rem auto 3rem auto;
+    margin: 6rem 0 3rem 0;
 }
 
 button:hover {
-    background-color: #1e293b;
+    opacity: 0.8;
 }
 
-button:active {
-    transform: scale(0.97);
+@media screen and (max-width: 1250px) {
+    header, .contenedor, footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
     header {
-        padding: 6rem 1.5rem;
+        padding-top: 8rem;
     }
 
     header h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     header p {
-        font-size: 1.5rem;
-    }
-    
-    .contenedor {
-        margin: 3rem auto;
-        padding: 0 1.5rem;
+        font-size: 1.8rem;
     }
 
     h2 {
-        font-size: 2.2rem;
-        margin-top: 4rem;
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    p, li {
+        font-size: 1.5rem;
     }
 
     .tabla-comparativa, 
@@ -240,47 +242,27 @@ button:active {
     }
     
     .tabla-comparativa tr {
-        border-bottom: 3px solid var(--color-borde); 
-        padding: 1.5rem 0;
-    }
-    
-    .tabla-comparativa tr:last-child {
-        border-bottom: none;
+        border-bottom: 2px solid var(--color-primario); 
+        padding: 2rem 0;
     }
     
     .tabla-comparativa td { 
         border: none;
-        padding: 0.8rem 1.5rem 0.8rem 45%; 
+        padding: 0.8rem 0 0.8rem 45%; 
         position: relative;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     
     .tabla-comparativa td:before { 
         position: absolute;
         top: 0.8rem;
-        left: 1.5rem;
+        left: 0;
         width: 40%; 
-        font-weight: 700;
+        font-weight: 800;
         color: var(--color-primario);
-        font-size: 1.2rem;
     }
     
-    .tabla-comparativa td:nth-of-type(1):before { content: "Característica:"; }
-    .tabla-comparativa td:nth-of-type(2):before { content: "Mobile-First:"; }
-    .tabla-comparativa td:nth-of-type(3):before { content: "Desktop-First:"; }
-}
-
-@media screen and (max-width: 480px) {
-    header h1 {
-        font-size: 2.4rem;
-    }
-
-    p, li {
-        font-size: 1.2rem;
-    }
-
-    .codigo pre {
-        font-size: 1.1rem;
-        padding: 1.5rem;
-    }
+    .tabla-comparativa td:nth-of-type(1):before { content: "Ítem:"; }
+    .tabla-comparativa td:nth-of-type(2):before { content: "Mobile:"; }
+    .tabla-comparativa td:nth-of-type(3):before { content: "Desktop:"; }
 }
