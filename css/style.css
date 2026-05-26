@@ -1,13 +1,13 @@
 :root {
-    --color-fondo: #fcfcfd;
+    --color-fondo: #f8fafc;
     --color-superficie: #ffffff;
-    --color-primario: #1e293b;
+    --color-primario: #0f172a;
     --color-secundario: #0284c7;
-    --color-texto: #475569;
-    --color-borde: #e2e8f0;
-    --color-codigo-bg: #f8fafc;
+    --color-texto: #1e293b;
+    --color-borde: #cbd5e1;
+    --color-codigo-bg: #f1f5f9;
     --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --borde-radio: 12px;
+    --borde-radio: 16px;
 }
 
 * {
@@ -20,113 +20,119 @@ body {
     font-family: var(--fuente-sistema);
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    line-height: 1.7;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
 }
 
 header {
     background-color: var(--color-superficie);
-    border-bottom: 1px solid var(--color-borde);
+    border-bottom: 2px solid var(--color-borde);
     text-align: center;
-    padding: 5rem 1.5rem;
+    padding: 8rem 2rem;
     position: relative;
 }
 
 header::before {
     content: "kevin santiago mosquera";
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 25px;
+    right: 35px;
     font-family: monospace;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--color-secundario);
     letter-spacing: 1px;
 }
 
 header h1 {
     color: var(--color-primario);
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 5rem;
+    font-weight: 900;
     letter-spacing: -0.04em;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
 }
 
 header p {
-    color: #64748b;
-    font-size: 1.25rem;
-    font-weight: 400;
-    max-width: 600px;
+    color: #475569;
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .contenedor {
-    max-width: 1050px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 3rem;
 }
 
 footer {
     background-color: var(--color-superficie);
-    color: #94a3b8;
+    color: #64748b;
     text-align: center;
-    padding: 2.5rem 1.5rem;
-    margin-top: 6rem;
-    font-size: 0.9rem;
-    border-top: 1px solid var(--color-borde);
+    padding: 4rem 2rem;
+    margin-top: 10rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-top: 2px solid var(--color-borde);
 }
 
 h2 {
     color: var(--color-primario);
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
     letter-spacing: -0.02em;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
 }
 
 h3 {
     color: var(--color-primario);
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
-    margin: 2.5rem 0 1rem 0;
+    margin: 4rem 0 1.5rem 0;
 }
 
 p {
-    font-size: 1.15rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
     color: var(--color-texto);
+    font-weight: 450;
 }
 
 ul {
-    margin-bottom: 2rem;
-    padding-left: 1.25rem;
+    margin-bottom: 3.5rem;
+    padding-left: 2rem;
 }
 
 li {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
     color: var(--color-texto);
+    font-weight: 450;
 }
 
 b {
     color: var(--color-primario);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .codigo {
     background-color: var(--color-codigo-bg);
-    border: 1px solid var(--color-borde);
+    border: 2px solid var(--color-borde);
     border-radius: var(--borde-radio);
-    margin: 2rem 0;
+    margin: 3.5rem 0;
     overflow-x: auto;
 }
 
 .codigo pre {
-    color: #334155;
+    color: #0f172a;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    padding: 1.5rem;
-    font-size: 1.05rem;
+    padding: 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
     tab-size: 4;
 }
 
@@ -134,19 +140,19 @@ b {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    margin: 2.5rem 0;
+    margin: 4rem 0;
     background-color: var(--color-superficie);
-    border: 1px solid var(--color-borde);
+    border: 2px solid var(--color-borde);
     border-radius: var(--borde-radio);
     overflow: hidden;
 }
 
 .tabla-comparativa th, 
 .tabla-comparativa td {
-    padding: 1.25rem 1.5rem;
+    padding: 2rem 2.5rem;
     text-align: left;
-    border-bottom: 1px solid var(--color-borde);
-    font-size: 1.1rem;
+    border-bottom: 2px solid var(--color-borde);
+    font-size: 1.5rem;
 }
 
 .tabla-comparativa tr:last-child td {
@@ -156,65 +162,66 @@ b {
 .tabla-comparativa th {
     background-color: #f8fafc;
     color: var(--color-primario);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .tabla-comparativa td code {
-    background-color: #f1f5f9;
+    background-color: #e2e8f0;
     color: #0f172a;
-    padding: 0.2rem 0.4rem;
-    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
     font-family: monospace;
-    font-size: 0.95rem;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .tabla-comparativa tr:hover {
-    background-color: #f8fafc;
+    background-color: #f1f5f9;
 }
 
 button {
     background-color: var(--color-primario);
     color: white;
     border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    border-radius: 8px;
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
     display: block;
-    margin: 4rem auto 2rem auto;
+    margin: 6rem auto 3rem auto;
 }
 
 button:hover {
-    background-color: #0f172a;
+    background-color: #1e293b;
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
 
 @media screen and (max-width: 768px) {
     header {
-        padding: 4rem 1rem;
+        padding: 6rem 1.5rem;
     }
 
     header h1 {
-        font-size: 2.3rem;
+        font-size: 3rem;
     }
 
     header p {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
     
     .contenedor {
-        margin: 2rem auto;
-        padding: 0 1.25rem;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
     }
 
     h2 {
-        font-size: 1.6rem;
-        margin-top: 3rem;
+        font-size: 2.2rem;
+        margin-top: 4rem;
     }
 
     .tabla-comparativa, 
@@ -233,8 +240,8 @@ button:active {
     }
     
     .tabla-comparativa tr {
-        border-bottom: 2px solid var(--color-borde); 
-        padding: 1rem 0;
+        border-bottom: 3px solid var(--color-borde); 
+        padding: 1.5rem 0;
     }
     
     .tabla-comparativa tr:last-child {
@@ -243,19 +250,19 @@ button:active {
     
     .tabla-comparativa td { 
         border: none;
-        padding: 0.5rem 1rem 0.5rem 45%; 
+        padding: 0.8rem 1.5rem 0.8rem 45%; 
         position: relative;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     
     .tabla-comparativa td:before { 
         position: absolute;
-        top: 0.5rem;
-        left: 1rem;
+        top: 0.8rem;
+        left: 1.5rem;
         width: 40%; 
-        font-weight: 600;
+        font-weight: 700;
         color: var(--color-primario);
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
     
     .tabla-comparativa td:nth-of-type(1):before { content: "Característica:"; }
@@ -265,15 +272,15 @@ button:active {
 
 @media screen and (max-width: 480px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 2.4rem;
     }
 
     p, li {
-        font-size: 1.05rem;
+        font-size: 1.2rem;
     }
 
     .codigo pre {
-        font-size: 0.9rem;
-        padding: 1.25rem;
+        font-size: 1.1rem;
+        padding: 1.5rem;
     }
 }
