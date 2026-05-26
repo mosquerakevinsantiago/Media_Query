@@ -51,7 +51,7 @@ header {
 }
 
 header::before {
-    content: "kevin santiago mosquera // PROTOCOL_01";
+    content: "kevin santiago mosquera 
     position: absolute;
     top: 20px;
     right: 25px;
