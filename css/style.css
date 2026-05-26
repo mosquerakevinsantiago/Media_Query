@@ -1,20 +1,13 @@
 
 :root {
-    /* Colores base de la red */
     --bg-principal: #0a0b10;
     --bg-tarjeta: #121420;
     --bg-codigo: #05060b;
-    
-    /* Neones de interfaz */
     --neon-cian: #00f3ff;
     --neon-magenta: #ff0055;
     --neon-verde: #39ff14;
-    
-    /* Textos */
     --texto-brillante: #f0f5ff;
     --texto-mutado: #6272a4;
-    
-    /* Fuentes */
     --fuente-titulo: 'Orbitron', 'Segoe UI', sans-serif;
     --fuente-mono: 'Fira Code', 'Courier New', monospace;
 }
