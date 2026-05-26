@@ -1,15 +1,22 @@
-/* ==========================================
-   1. VARIABLES Y CONFIGURACIÓN BASE
-   ========================================== */
+
 :root {
-    --color-principal: #2c3e50;
-    --color-secundario: #3498db;
-    --color-fondo: #67b5ff;
-    --color-tarjeta: #ffffff;
-    --color-texto: #333333;
-    --color-codigo: #272822;
-    --borde-radio: 8px;
-    --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Colores base de la red */
+    --bg-principal: #0a0b10;
+    --bg-tarjeta: #121420;
+    --bg-codigo: #05060b;
+    
+    /* Neones de interfaz */
+    --neon-cian: #00f3ff;
+    --neon-magenta: #ff0055;
+    --neon-verde: #39ff14;
+    
+    /* Textos */
+    --texto-brillante: #f0f5ff;
+    --texto-mutado: #6272a4;
+    
+    /* Fuentes */
+    --fuente-titulo: 'Orbitron', 'Segoe UI', sans-serif;
+    --fuente-mono: 'Fira Code', 'Courier New', monospace;
 }
 
 * {
@@ -19,164 +26,232 @@
 }
 
 body {
-    font-family: var(--fuente);
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    line-height: 1.6;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--texto-brillante);
+    line-height: 1.7;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 243, 255, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 85, 0.04) 0%, transparent 40%);
 }
 
-/* ==========================================
-   2. ESTRUCTURA Y CONTENEDORES
-   ========================================== */
 header {
-    background: linear-gradient(135deg, var(--color-principal), #1a252f);
-    color: white;
+    background-color: rgba(18, 20, 32, 0.8);
+    border-bottom: 3px solid var(--neon-cian);
     text-align: center;
-    padding: 3rem 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 4.5rem 1rem;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+}
+
+header::before {
+    content: "kevin santiago mosquera";
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-family: var(--fuente-mono);
+    font-size: 0.75rem;
+    color: var(--neon-verde);
+    letter-spacing: 2px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-family: var(--fuente-titulo);
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+    margin-bottom: 1rem;
 }
 
 header p {
+    font-family: var(--fuente-mono);
     font-size: 1.1rem;
-    opacity: 0.9;
+    color: var(--neon-magenta);
+    text-shadow: 0 0 8px rgba(255, 0, 85, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .contenedor {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+    max-width: 1050px; 
+    margin: 4rem auto;
+    padding: 0 2rem;
 }
 
 footer {
-    background-color: var(--color-principal);
-    color: white;
+    background-color: var(--bg-tarjeta);
+    color: var(--texto-mutado);
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-    font-size: 0.9rem;
+    padding: 2rem;
+    margin-top: 5rem;
+    font-family: var(--fuente-mono);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(0, 243, 255, 0.1);
+    letter-spacing: 1px;
 }
 
-/* ==========================================
-   3. COMPONENTES DE TEXTO Y BLOQUES
-   ========================================== */
 h2 {
-    color: var(--color-principal);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 0.5rem;
+    font-family: var(--fuente-titulo);
+    color: var(--neon-cian);
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+h2::before {
+    content: "> ";
+    color: var(--neon-magenta);
+    margin-right: 10px;
+    font-family: var(--fuente-mono);
 }
 
 h3 {
-    color: var(--color-secundario);
-    margin: 1.5rem 0 0.5rem 0;
+    font-family: var(--fuente-titulo);
+    color: var(--neon-magenta);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin: 2.5rem 0 1rem 0;
+    letter-spacing: 1px;
 }
 
 p {
-    margin-bottom: 1rem;
-    text-align: justify;
+    font-size: 1.15rem; 
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
 }
 
 ul {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding-left: 1.5rem;
+    list-style: none; 
 }
 
 li {
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-/* Bloques de Código */
+li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: var(--neon-cian);
+    font-size: 0.8rem;
+    top: 2px;
+    text-shadow: 0 0 5px var(--neon-cian);
+}
+
+b {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
 .codigo {
-    background-color: var(--color-codigo);
-    border-left: 5px solid var(--color-secundario);
-    border-radius: var(--borde-radio);
-    margin: 1.5rem 0;
-    overflow-x: auto; /* Permite scroll horizontal si el código es largo en móvil */
+    background-color: var(--bg-codigo);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-left: 4px solid var(--neon-magenta);
+    border-radius: 4px;
+    margin: 2rem 0;
+    overflow-x: auto;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .codigo pre {
-    color: #f8f8f2;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 1.2rem;
-    font-size: 0.95rem;
+    color: #a6e22e; 
+    font-family: var(--fuente-mono);
+    padding: 1.5rem;
+    font-size: 1.05rem;
 }
 
-/* Botón Interactivo */
-button {
-    background-color: var(--color-secundario);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: var(--borde-radio);
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.1s ease;
-    display: block;
-    margin: 2.5rem auto 1rem auto;
-    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
-}
-
-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: translateY(0);
-}
-
-/* ==========================================
-   4. TABLAS RESPONSIVE
-   ========================================== */
 .tabla-comparativa {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
-    background-color: var(--color-tarjeta);
-    border-radius: var(--borde-radio);
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin: 2.5rem 0;
+    background-color: var(--bg-tarjeta);
+    border: 1px solid rgba(0, 243, 255, 0.15);
 }
 
 .tabla-comparativa th, 
 .tabla-comparativa td {
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: left;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1.1rem;
 }
 
 .tabla-comparativa th {
-    background-color: var(--color-principal);
-    color: white;
-    font-weight: 600;
+    font-family: var(--fuente-titulo);
+    background-color: rgba(0, 243, 255, 0.05);
+    color: var(--neon-cian);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--neon-cian);
+}
+
+.tabla-comparativa td code {
+    background-color: rgba(255, 0, 85, 0.1);
+    color: var(--neon-magenta);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-family: var(--fuente-mono);
 }
 
 .tabla-comparativa tr:hover {
-    background-color: #fcfcfc;
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
-/* ==========================================
-   5. ESTRATEGIA RESPONSIVE (MEDIA QUERIES)
-   ========================================== */
+button {
+    background-color: transparent;
+    color: var(--neon-verde);
+    border: 2px solid var(--neon-verde);
+    padding: 1rem 2.5rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 4rem auto 2rem auto;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.1);
+    position: relative;
+}
 
-/* Tabletas hacia abajo (Max-width: 768px) */
+button:hover {
+    background-color: var(--neon-verde);
+    color: var(--bg-principal);
+    box-shadow: 0 0 25px var(--neon-verde);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
 @media screen and (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.3rem;
+        letter-spacing: 2px;
     }
     
     .contenedor {
-        margin: 1rem auto;
+        margin: 2rem auto;
+        padding: 0 1.2rem;
     }
 
-    /* Transformamos la tabla en bloques para que no se desborde en pantallas chicas */
+    h2 {
+        font-size: 1.6rem;
+    }
     .tabla-comparativa, 
     .tabla-comparativa thead, 
     .tabla-comparativa tbody, 
@@ -193,47 +268,46 @@ button:active {
     }
     
     .tabla-comparativa tr {
-        border: 1px solid #ccc; 
-        margin-bottom: 1rem;
-        padding: 0.5rem;
+        border: 1px solid rgba(0, 243, 255, 0.2); 
+        margin-bottom: 1.5rem;
+        background-color: var(--bg-tarjeta);
     }
     
     .tabla-comparativa td { 
         border: none;
-        border-bottom: 1px solid #eee; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
         position: relative;
-        padding-left: 50%; 
+        padding-left: 45%; 
+        font-size: 1rem;
     }
     
     .tabla-comparativa td:before { 
         position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 45%; 
-        padding-right: 10px; 
-        white-space: nowrap;
+        top: 1.2rem;
+        left: 1rem;
+        width: 40%; 
         font-weight: bold;
-        color: var(--color-principal);
+        color: var(--neon-cian);
+        font-family: var(--fuente-titulo);
+        font-size: 0.85rem;
     }
     
-    /* Agregamos etiquetas simuladas para la tabla colapsada */
-    .tabla-comparativa td:nth-of-type(1):before { content: "Propiedad:"; }
-    .tabla-comparativa td:nth-of-type(2):before { content: "Mobile-First:"; }
-    .tabla-comparativa td:nth-of-type(3):before { content: "Desktop-First:"; }
+    .tabla-comparativa td:nth-of-type(1):before { content: "DATA_TYPE:"; }
+    .tabla-comparativa td:nth-of-type(2):before { content: "M_FIRST:"; }
+    .tabla-comparativa td:nth-of-type(3):before { content: "D_FIRST:"; }
 }
 
-/* Teléfonos móviles (Max-width: 480px) */
 @media screen and (max-width: 480px) {
-    header {
-        padding: 2rem 1rem;
-    }
-
     header h1 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
+    }
+    
+    p, li {
+        font-size: 1.05rem;
     }
 
     .codigo pre {
-        font-size: 0.85rem;
-        padding: 0.8rem;
+        font-size: 0.9rem;
+        padding: 1rem;
     }
 }
