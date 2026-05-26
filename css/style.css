@@ -1,6 +1,6 @@
 
 :root {
-    --bg-principal: #f4f5f8;
+    --bg-principal: #eef1f6;
     --bg-tarjeta: #ffffff;
     --bg-codigo: #1f2326;
     --valorant-rojo: #ff4655;
@@ -13,10 +13,10 @@
     --borde-radio: 0px;
 }
 
-@keyframes pulsoTactico {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes movimientoRadar {
+    0% { background-position: 0 0, 0 0, 0% 50%; }
+    50% { background-position: 40px 40px, 40px 40px, 100% 50%; }
+    100% { background-position: 80px 80px, 80px 80px, 0% 50%; }
 }
 
 * {
@@ -30,12 +30,13 @@ body {
     background-color: var(--bg-principal);
     color: var(--texto-oscuro);
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
     background-image: 
-        linear-gradient(rgba(15, 25, 35, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 25, 35, 0.03) 1px, transparent 1px),
-        linear-gradient(-45deg, #f4f5f8, #e3e6ec, #eceef3, #f4f5f8);
-    background-size: 30px 30px, 30px 30px, 400% 400%;
-    animation: pulsoTactico 20s ease infinite;
+        linear-gradient(rgba(15, 25, 35, 0.05) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(15, 25, 35, 0.05) 1.5px, transparent 1.5px),
+        linear-gradient(-45deg, #eef1f6, #dfecf7, #e3e8f1, #eef1f6);
+    background-size: 50px 50px, 50px 50px, 400% 400%;
+    animation: movimientoRadar 25s linear infinite;
     background-attachment: fixed;
 }
 
@@ -46,6 +47,7 @@ header {
     padding: 7rem 2rem;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 98% 100%, 0 100%);
+    box-shadow: 0 10px 30px rgba(15, 25, 35, 0.15);
 }
 
 header::before {
