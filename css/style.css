@@ -1,19 +1,19 @@
 
 :root {
-    --bg-principal: #f0f4f8;
-    --bg-tarjeta: rgba(255, 255, 255, 0.85);
-    --bg-codigo: #e2e8f0;
-    --neon-cian: #00b4d8;
-    --neon-magenta: #ff0055;
-    --neon-verde: #00b512;
-    --texto-brillante: #0f172a;
-    --texto-mutated: #475569;
+    --bg-principal: #f4f5f8;
+    --bg-tarjeta: #ffffff;
+    --bg-codigo: #1f2326;
+    --valorant-rojo: #ff4655;
+    --valorant-azul: #0f1923;
+    --valorant-cian: #11c2d4;
+    --texto-oscuro: #0f1923;
+    --texto-mutado: #7e8287;
     --fuente-titulo: 'Orbitron', 'Segoe UI', sans-serif;
     --fuente-mono: 'Fira Code', 'Courier New', monospace;
-    --borde-radio: 12px;
+    --borde-radio: 0px;
 }
 
-@keyframes pulsoEnergia {
+@keyframes pulsoTactico {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -26,60 +26,56 @@
 }
 
 body {
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background-color: var(--bg-principal);
-    color: var(--texto-brillante);
+    color: var(--texto-oscuro);
     line-height: 1.7;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(0, 180, 216, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 0, 85, 0.06) 0%, transparent 50%),
-        linear-gradient(-45deg, #f0f4f8, #e0e7ff, #f3e8ff, #e0f2fe);
-    background-size: 400% 400%;
-    animation: pulsoEnergia 15s ease infinite;
+        linear-gradient(rgba(15, 25, 35, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 25, 35, 0.03) 1px, transparent 1px),
+        linear-gradient(-45deg, #f4f5f8, #e3e6ec, #eceef3, #f4f5f8);
+    background-size: 30px 30px, 30px 30px, 400% 400%;
+    animation: pulsoTactico 20s ease infinite;
     background-attachment: fixed;
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 4px solid var(--neon-cian);
+    background-color: var(--valorant-azul);
+    border-bottom: 5px solid var(--valorant-rojo);
     text-align: center;
     padding: 7rem 2rem;
     position: relative;
-    box-shadow: 0 10px 40px rgba(0, 180, 216, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 98% 100%, 0 100%);
 }
 
 header::before {
-    content: "kevin santiago mosquera // SYS_ONLINE";
+    content: "kevin santiago mosquera // PROTOCOL_01";
     position: absolute;
     top: 20px;
     right: 25px;
     font-family: var(--fuente-mono);
     font-size: 1.1rem;
     font-weight: bold;
-    color: var(--neon-verde);
+    color: var(--valorant-rojo);
     letter-spacing: 2px;
 }
 
 header h1 {
     font-family: var(--fuente-titulo);
-    color: var(--texto-brillante);
+    color: #ffffff;
     font-size: 4.5rem;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 4px 10px rgba(0, 180, 216, 0.2);
+    letter-spacing: 5px;
     margin-bottom: 1rem;
 }
 
 header p {
     font-family: var(--fuente-mono);
     font-size: 1.8rem;
-    color: var(--neon-magenta);
-    text-shadow: 0 2px 5px rgba(255, 0, 85, 0.2);
+    color: var(--valorant-cian);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: bold;
 }
 
@@ -90,22 +86,21 @@ header p {
 }
 
 footer {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    color: var(--texto-mutated);
+    background-color: var(--valorant-azul);
+    color: var(--texto-mutado);
     text-align: center;
     padding: 3.5rem 2rem;
     margin-top: 8rem;
     font-family: var(--fuente-mono);
     font-size: 1.2rem;
-    border-top: 2px solid rgba(0, 180, 216, 0.2);
+    border-top: 3px solid var(--valorant-rojo);
     letter-spacing: 1px;
     font-weight: 600;
 }
 
 h2 {
     font-family: var(--fuente-titulo);
-    color: var(--neon-cian);
+    color: var(--valorant-azul);
     font-size: 2.8rem;
     text-transform: uppercase;
     margin-top: 5rem;
@@ -113,12 +108,13 @@ h2 {
     letter-spacing: 2px;
     display: flex;
     align-items: center;
-    text-shadow: 0 2px 4px rgba(0, 180, 216, 0.1);
+    border-bottom: 2px solid var(--valorant-azul);
+    padding-bottom: 0.5rem;
 }
 
 h2::before {
-    content: "> ";
-    color: var(--neon-magenta);
+    content: "// ";
+    color: var(--valorant-rojo);
     margin-right: 12px;
     font-family: var(--fuente-mono);
     font-weight: 900;
@@ -126,7 +122,7 @@ h2::before {
 
 h3 {
     font-family: var(--fuente-titulo);
-    color: var(--neon-magenta);
+    color: var(--valorant-rojo);
     font-size: 2rem;
     text-transform: uppercase;
     margin: 3.5rem 0 1.2rem 0;
@@ -136,7 +132,7 @@ h3 {
 p {
     font-size: 1.5rem;
     margin-bottom: 2.2rem;
-    color: #1e293b;
+    color: var(--texto-oscuro);
     font-weight: 500;
 }
 
@@ -151,7 +147,7 @@ li {
     margin-bottom: 1rem;
     position: relative;
     padding-left: 2rem;
-    color: #1e293b;
+    color: var(--texto-oscuro);
     font-weight: 500;
 }
 
@@ -159,29 +155,29 @@ li::before {
     content: "■";
     position: absolute;
     left: 0;
-    color: var(--neon-cian);
+    color: var(--valorant-rojo);
     font-size: 1.1rem;
     top: 2px;
-    text-shadow: 0 0 5px var(--neon-cian);
 }
 
 b {
     color: #000000;
     font-weight: 800;
+    background-color: rgba(255, 70, 85, 0.1);
+    padding: 0 0.4rem;
 }
 
 .codigo {
     background-color: var(--bg-codigo);
-    border: 2px solid rgba(0, 180, 216, 0.3);
-    border-left: 6px solid var(--neon-magenta);
+    border-left: 6px solid var(--valorant-rojo);
     border-radius: var(--borde-radio);
     margin: 3rem 0;
     overflow-x: auto;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .codigo pre {
-    color: #0f172a;
+    color: #ffffff;
     font-family: var(--fuente-mono);
     padding: 2rem;
     font-size: 1.3rem;
@@ -194,19 +190,17 @@ b {
     border-spacing: 0;
     margin: 3.5rem 0;
     background-color: var(--bg-tarjeta);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid rgba(0, 180, 216, 0.2);
+    border: 2px solid var(--valorant-azul);
     border-radius: var(--borde-radio);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
 }
 
 .tabla-comparativa th, 
 .tabla-comparativa td {
     padding: 1.7rem 2rem;
     text-align: left;
-    border-bottom: 2px solid rgba(0, 180, 216, 0.1);
+    border-bottom: 1px solid #e3e6ec;
     font-size: 1.4rem;
 }
 
@@ -216,50 +210,48 @@ b {
 
 .tabla-comparativa th {
     font-family: var(--fuente-titulo);
-    background-color: rgba(0, 180, 216, 0.08);
-    color: var(--neon-cian);
+    background-color: var(--valorant-azul);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 3px solid var(--neon-cian);
+    border-bottom: 3px solid var(--valorant-rojo);
     font-weight: 800;
 }
 
 .tabla-comparativa td code {
-    background-color: rgba(255, 0, 85, 0.08);
-    color: var(--neon-magenta);
+    background-color: var(--valorant-azul);
+    color: #ffffff;
     padding: 0.3rem 0.6rem;
-    border-radius: 6px;
     font-family: var(--fuente-mono);
     font-weight: bold;
 }
 
 .tabla-comparativa tr:hover {
-    background-color: rgba(0, 180, 216, 0.03);
+    background-color: rgba(15, 25, 35, 0.03);
 }
 
 button {
-    background-color: transparent;
-    color: var(--neon-verde);
-    border: 3px solid var(--neon-verde);
-    padding: 1.3rem 3.5rem;
+    background-color: var(--valorant-rojo);
+    color: white;
+    border: none;
+    padding: 1.5rem 4rem;
     font-family: var(--fuente-titulo);
     font-size: 1.4rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 3px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: block;
     margin: 5rem auto 2.5rem auto;
-    box-shadow: 0 0 15px rgba(0, 181, 18, 0.1);
-    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(255, 70, 85, 0.3);
+    clip-path: polygon(0 0, 90% 0, 100% 30%, 100% 100%, 10%, 100%, 0 70%);
 }
 
 button:hover {
-    background-color: var(--neon-verde);
-    color: #ffffff;
-    box-shadow: 0 0 25px rgba(0, 181, 18, 0.4);
-    transform: scale(1.05);
+    background-color: var(--valorant-azul);
+    box-shadow: 0 4px 25px rgba(15, 25, 35, 0.4);
+    transform: translateY(-2px);
 }
 
 button:active {
@@ -304,16 +296,15 @@ button:active {
     }
     
     .tabla-comparativa tr {
-        border: 2px solid rgba(0, 180, 216, 0.2); 
+        border: 2px solid var(--valorant-azul); 
         margin-bottom: 1.5rem;
         background-color: var(--bg-tarjeta);
-        border-radius: 8px;
         padding: 1rem 0;
     }
     
     .tabla-comparativa td { 
         border: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+        border-bottom: 1px solid #e3e6ec; 
         position: relative;
         padding-left: 45%; 
         font-size: 1.2rem;
@@ -329,7 +320,7 @@ button:active {
         left: 1.5rem;
         width: 40%; 
         font-weight: bold;
-        color: var(--neon-cian);
+        color: var(--valorant-rojo);
         font-family: var(--fuente-titulo);
         font-size: 1.1rem;
     }
